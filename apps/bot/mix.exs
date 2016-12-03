@@ -18,7 +18,7 @@ defmodule Bot.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger],
+    [applications: [:logger, :elixir_wit, :facebook_messenger],
      mod: {Bot, []}]
   end
 
@@ -38,6 +38,7 @@ defmodule Bot.Mixfile do
   defp deps do
     [
       { :elixir_wit, github: "SpacemanLabs/elixir_wit" },
+      { :facebook_messenger, github: "SpacemanLabs/facebook_messenger" },
     ]
   end
 end

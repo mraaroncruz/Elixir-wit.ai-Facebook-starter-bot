@@ -9,6 +9,8 @@ use Mix.Config
 # back to each application for organization purposes.
 import_config "../apps/*/config/config.exs"
 
+config :facebook_messenger, facebook_page_token: System.get_env("FACEBOOK_PAGE_TOKEN")
+
 # Sample configuration (overrides the imported configuration above):
 #
 #     config :logger, :console,

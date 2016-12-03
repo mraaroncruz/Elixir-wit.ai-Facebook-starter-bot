@@ -6,6 +6,7 @@ defmodule Bot do
 
     children = [
       worker(Bot.MessageHandler, []),
+      worker(Bot.WeatherAPIClient, [Application.get_env(:bot, :weather_app_id)]),
     ]
 
     opts = [strategy: :one_for_one, name: Bot.Supervisor]
