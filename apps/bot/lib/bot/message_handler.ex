@@ -19,7 +19,7 @@ defmodule Bot.MessageHandler do
 
   def handle_cast({:message, provider, %Message{} = msg}, _state) do
     sesh = session_id(msg)
-    Wit.run_actions(@wit_access_token, sesh, WeatherActions, msg.text)
+    Wit.run_actions(@wit_access_token, sesh, Bot.PizzaActions, msg.text)
     {:noreply, :ok}
   end
 
